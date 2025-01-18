@@ -1,6 +1,4 @@
 from dash import Dash, html, dcc, ctx, callback, Input, Output
-from map import Map
-from histogram import Histogram
 from piechart import PieChart
 from accueil import Accueil
 from tornado import Tornado

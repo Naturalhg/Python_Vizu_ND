@@ -1,4 +1,3 @@
-from dash import Dash, html, dcc
 from dashboard import DashBoard
 
 class Main:

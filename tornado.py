@@ -1,6 +1,4 @@
 from dash import Dash, html, dcc
-from map import Map
-from histogram import Histogram
 from piechart import PieChart
 
 class Tornado:
