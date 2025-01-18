@@ -42,8 +42,8 @@ class DashBoard:
                             ]
                         ),
                         html.Img(
-                            src=self.app.get_asset_url('logo_black.png'),
                             className='logo-navbar',
+                            src={'external_url': '/img/style.css'},#'img/logo_black.png',
                         ),
                         html.Div(
                             className='right',

@@ -42,7 +42,7 @@ class DashBoard:
                             ]
                         ),
                         html.Img(
-                            src=self.app.get_asset_url('logo_black.png'),
+                            src='assets/logo_black.png',
                             className='logo-navbar',
                         ),
                         html.Div(
