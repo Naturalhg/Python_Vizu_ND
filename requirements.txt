@@ -9,7 +9,7 @@ dash-core-components==2.0.0
 dash-html-components==2.0.0
 dash-table==5.0.0
 Flask==3.0.0
-folium==0.15.1
+folium==0.19.4
 idna==3.6
 importlib-metadata==7.0.0
 itsdangerous==2.1.2
@@ -33,3 +33,4 @@ urllib3==2.1.0
 Werkzeug==3.0.1
 xyzservices==2023.10.1
 zipp==3.17.0
+geopy=2.4.1
