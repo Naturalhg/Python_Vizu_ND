@@ -16,7 +16,7 @@ def clean_csv_files():
             "month", "day", "area", "region"
         ],
         "All_Natural_Disasters.csv": [
-            "Year", "Disaster Group", "Disaster Subgroup", "Disaster Subtype", 
+            "Year", "Disaster Group", "Disaster Subgroup", "Disaster Subtype",
             "Total Affected", "Total Damage (USD, adjusted)", "CPI"
         ],
         "country-coordinates-world.csv": [
