@@ -10,7 +10,7 @@ class DashBoard:
     """
     def __init__(self):
         """
-        Initialisation du Dashboard en implémentant une carte et les deux histogrammes
+        Initialisation du Dashboard en implémentant la navbar et l'accueil
         """
 
     def createDashApplication(self):
@@ -36,7 +36,7 @@ class DashBoard:
                                     id='accueil',
                                 ),
                                 html.Button(
-                                    'Tornado',
+                                    'Tornades',
                                     id='tornado',
                                 ),
                             ]
@@ -49,11 +49,11 @@ class DashBoard:
                             className='right',
                             children=[
                                 html.Button(
-                                    'Earthquake',
+                                    'Séïsmes',
                                     id='earthquake',
                                 ),
                                 html.Button(
-                                    'Earthquakes',
+                                    'Séïsmes',
                                     id='earthquakes',
                                 ),
                             ]
@@ -78,7 +78,7 @@ class DashBoard:
     )
 
     def switch_page(btn1, btn2, btn3, btn4) :
-        layout = html.Div(Accueil().get_layout())
+        layout = html.Div()
         if 'accueil' == ctx.triggered_id :
             layout = html.Div(Accueil().get_layout())
         elif 'tornado' == ctx.triggered_id :

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
 
 /* GENERAL */
 
@@ -10,7 +11,7 @@ body {
 
 .App {
     color: black;
-    text-align: center;
+    font-family: 'Lexend Deca';
 }
 
 .wrapper {
@@ -66,5 +67,23 @@ nav button:hover {
     box-shadow: 0 0 10px rgb(200, 211, 218);
 }
 
-/* OTHER */
+/* PAGES */
 
+.graph {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 5%;
+    gap: 5%;
+}
+
+.wrapper-2-part {
+    width: 600px;
+}
+
+
+.texts {
+    padding: 2% 7%;
+}
+
+.texts h1 {
+    margin-bottom: 40px;
+}
