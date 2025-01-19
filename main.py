@@ -1,4 +1,4 @@
-from dashboard import DashBoard
+from dashboard.pages.dashboard import DashBoard
 
 class Main:
     """
