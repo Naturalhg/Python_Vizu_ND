@@ -5,15 +5,15 @@ class Main:
     Cette classe représente l'exécutable pour lancer l'application
 
     Méthodes :
-        main(self) : Méthode principale pour lancer l'application
+        main(self) : Méthode pour lancer l'application
     """
     def main(self):
         """
-        Méthode principale pour lancer l'application
+        Méthode pour lancer l'application
         Créer une instance dashboard et l'exécute
         """
         dashboard = DashBoard()
-        app = dashboard.createDashApplication()
+        app = dashboard.createDash()
         app.run_server(debug=True, use_reloader=False)
 
 if __name__ == '__main__':
