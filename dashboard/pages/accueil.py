@@ -1,7 +1,8 @@
-from dash import html, dcc
+from dash import html, dcc, callback, Input, Output
 from dashboard.components.piechart import PieChart
 from dashboard.components.histogram import Histogram
 from dashboard.components.map import Map
+import plotly.express as plt
 
 class Accueil:
     """
@@ -11,7 +12,6 @@ class Accueil:
         GenMap = Instance de la classe Map qui permet l'affichage d'une carte générale sur la fréquence d'apparition des catastrophes naturelles
         CurPiechart = Instance de la classe PieChart qui permet l'affichage d'un pichart général sur les fréquences d'apparition des catastrophes naturelles
         LossPiechart = Instance de la classe PieChart qui permet l'affichage d'un pichart sur les pertes monétaires des catastrophes naturelles
-        DeathPiechart = Instance de la classe PieChart qui permet l'affichage d'un pichart sur le nombre de morts par catastrophes naturelles
         DeathHistogram = Instance de la classe Histogram qui permet l'affichage d'un histogramme sur le nombre de morts par an par pays des catastrophes naturelles
 
     Méthodes :
@@ -25,7 +25,6 @@ class Accueil:
         self.GenMap = Map('All_Natural_Disasters_with_Coordinates.csv')
         self.CurPiechart = PieChart('All_Natural_Disasters.csv', 'Total Events', 'Disaster Type')
         self.LossPiechart = PieChart('All_Natural_Disasters.csv', 'Total Damage (USD, original)', 'Disaster Type')
-        self.DeathPiechart = PieChart('All_Natural_Disasters.csv', 'Total Deaths', 'Disaster Type')
         self.DeathHistogram = Histogram('All_Natural_Disasters.csv', 'ISO', 'Total Deaths', 'Disaster Type')
 
     def get_layout(self):
@@ -75,8 +74,18 @@ class Accueil:
                         html.Div(
                             className='wrapper-2-part',
                             children=[
-                                html.H2("Nombre de morts pour chaque catastrophe"),
-                                dcc.Graph(figure=self.DeathPiechart.get_piechart()),
+                                html.H2("Pertes pour chaque catastrophe"),
+                                dcc.Graph(id='DeathPiechart'),
+                                html.P("Pertes :"),
+                                dcc.Dropdown(id='loss',
+                                    options=['Total Deaths', 'Total Damage (USD, original)', 'Total Damage (USD, adjusted)'],
+                                    value='Total Deaths'
+                                ),
+                                html.P("Type :"),
+                                dcc.Dropdown(id='type',
+                                    options=['Disaster Type', 'Disaster Subgroup', 'Disaster Subtype'],
+                                    value='Disaster Type'
+                                ),
                             ]
                         ),
                         html.Div(
@@ -92,3 +101,24 @@ class Accueil:
         ),
 
         return self.layout
+
+    @callback(
+        # ID de sortie pour afficher la figure du piechart
+        Output("DeathPiechart", "figure"),
+        # IDS des valeurs du piechart
+        Input("loss", "value"),
+        Input("type", "value")
+    )
+
+    def generate_chart(names, values):
+        """
+        Créer le diagramme circulaire interactif concernant les catastrophes naturelles
+
+        param: names: premier paramètre du diagramme circulaire
+                values: second paramètre du diagramme circulaire
+
+        Retourne:
+            PieChart : Un piechart qui s'actualise en fonction des choix de l'utilisateur
+        """
+        pie = PieChart('All_Natural_Disasters.csv', names, values)
+        return pie.get_piechart()

@@ -24,7 +24,7 @@ class DashBoard:
         Retourne:
             Dash : Objet qui représente l'application Dashboard
         """
-        self.app = Dash(__name__)
+        self.app = Dash(__name__, suppress_callback_exceptions=True)
 
         self.app.layout = html.Div(
             className='App',
