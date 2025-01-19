@@ -9,30 +9,33 @@ L’objectif de notre projet est de proposer à l’utilisateur un accès a de n
 
 Voici le lien git qui vous permettra de télécharger les fichiers avant les différents étapes de configuration 
 
+```bash
+
 https://github.com/Naturalhg/Python_Vizu_ND/tree/main
+```
 
 Afin de manipuler dans de bonnes conditions l’outil d’analyse plusieurs étapes sont à suivre:
 
 Tout d’abord, vous devez accéder localement sur votre machine aux différents fichiers composants.
 
-<aside>
+```bash
 git clone https://github.com/Naturalhg/Python_Vizu_ND.git   
-</aside>
+```
 
       Il est important dans un second temps de télécharger les différentes bibliothèques python       utilisées dans le projet.
 
-<aside>
+```bash
 python -m pip install -r requirements.txt
-</aside>
+```
         Enfin vous pouvez simplement exécuter le code grâce à la commande 
 
-<aside>
+```bash
 python main.py
-</aside>
+```
      N’oubliez pas qu’afin de visualiser les différents graphiques après exécution du code vous devez vous connecter à votre serveur local hébergeant le projet via votre navigateur, en entrant dans votre barre de recherche l’url.
-<aside>
+```bash
 http://127.0.0.1:8050/
-</aside>
+```
 
 # Data
 
