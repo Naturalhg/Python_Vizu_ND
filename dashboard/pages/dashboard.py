@@ -1,7 +1,7 @@
 from dash import Dash, html, ctx, callback, Input, Output
-from accueil import Accueil
-from tornado import Tornado
-from earthquake import Earthquake
+from dashboard.pages.accueil import Accueil
+from dashboard.pages.tornado import Tornado
+from dashboard.pages.earthquake import Earthquake
 
 class DashBoard:
     """

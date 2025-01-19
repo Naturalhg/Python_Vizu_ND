@@ -1,6 +1,6 @@
 from dash import html, dcc
-from piechart import PieChart
-from histogram import Histogram
+from dashboard.components.piechart import PieChart
+from dashboard.components.histogram import Histogram
 
 class Tornado:
     """
