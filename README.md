@@ -16,37 +16,22 @@ Afin de manipuler dans de bonnes conditions l’outil d’analyse plusieurs éta
 Tout d’abord, vous devez accéder localement sur votre machine aux différents fichiers composants.
 
 <aside>
-💡
-
-git clone https://github.com/Naturalhg/Python_Vizu_ND.git
-
+git clone https://github.com/Naturalhg/Python_Vizu_ND.git   
 </aside>
 
       Il est important dans un second temps de télécharger les différentes bibliothèques python       utilisées dans le projet.
 
 <aside>
-💡
-
 python -m pip install -r requirements.txt
-
 </aside>
-
-     Enfin vous pouvez simplement exécuter le code grâce à la commande 
+        Enfin vous pouvez simplement exécuter le code grâce à la commande 
 
 <aside>
-💡
-
 python main.py
-
 </aside>
-
      N’oubliez pas qu’afin de visualiser les différents graphiques après exécution du code vous devez vous connecter à votre serveur local hébergeant le projet via votre navigateur, en entrant dans votre barre de recherche l’url.
-
 <aside>
-💡
-
 http://127.0.0.1:8050/
-
 </aside>
 
 # Data
