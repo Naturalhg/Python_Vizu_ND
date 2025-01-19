@@ -7,11 +7,14 @@ class Earthquake:
     Tableau de bord des données sur les catastrophes naturelles
 
     Attributs :
-        SubPiechart = Instance de la classe PieChart qui permet l'affichage d'un pichart général des catastrophes naturelles
+        GenHistogram = Instance de la classe Histogram qui permet l'affichage de l'histogramme général des séïsmes les plus mortels en fonction de l'échelle de Richter
+        CurPiechart = Instance de la classe PieChart qui permet l'affichage du pichart de la fréquence d'apparition des séïsmes sur l'échelle de Richter
+        YearHistogram = Instance de la classe Histogram qui permet l'affichage de l'histogramme des morts chaque année des séïsmes en fonction de leur puissance
+        RicHistogram = Instance de la classe Histogram qui permet l'affichage de l'histogramme des séïsmes par an sur l'échelle de Richter
     """
     def __init__(self):
         """
-        Initialisation de l'affichage en implémentant un piechart
+        Initialisation de l'affichage en implémentant un diagramme circulaire et trois histogrammes
         """
         self.GenHistogram = Histogram('earthquakes.csv', 'richter', 'deaths', None)
         self.CurPiechart = PieChart('earthquakes.csv', None, 'richter')
@@ -23,7 +26,7 @@ class Earthquake:
         Changement du layout de l'application
 
         Retourne:
-            Div : Div html de l'application concernant les séïsmes
+            Div : Une division html de l'application concernant les séïsmes
         """
 
         self.layout = html.Div(

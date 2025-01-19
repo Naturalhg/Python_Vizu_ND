@@ -53,7 +53,7 @@ class DashBoard:
                                     id='earthquake',
                                 ),
                                 html.Button(
-                                    'Séïsmes',
+                                    'Sécheresses',
                                     id='earthquakes',
                                 ),
                             ]
