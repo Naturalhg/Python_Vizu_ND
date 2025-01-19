@@ -3,7 +3,6 @@ from piechart import PieChart
 from accueil import Accueil
 from tornado import Tornado
 from earthquake import Earthquake
-from map import NaturalDisasterMap
 
 class DashBoard:
     """
@@ -13,7 +12,6 @@ class DashBoard:
         """
         Initialisation du Dashboard en implémentant une carte et les deux histogrammes
         """
-        self.carte = NaturalDisasterMap('./data/All_Natural_Disasters_with_Coordinates.csv')
 
     def createDashApplication(self):
         """
@@ -57,8 +55,8 @@ class DashBoard:
                                 html.Button(
                                     'Earthquakes',
                                     id='earthquakes',
-                                ),
-                                html.Iframe(srcDoc=self.carte.get_map().get_root().render(), height='600px', width='1000px')
+                                )
+                                
                             ]
                         ),
                     ]

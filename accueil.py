@@ -1,5 +1,6 @@
 from dash import Dash, html, dcc
 from piechart import PieChart
+from map import NaturalDisasterMap
 
 class Accueil:
     """
@@ -15,6 +16,7 @@ class Accueil:
         """
         self.GenPiechart = PieChart('Total Deaths', 'Disaster Type')
         self.SubPiechart = PieChart('Total Deaths', 'Disaster Subgroup')
+        self.carte = NaturalDisasterMap('./data/All_Natural_Disasters_with_Coordinates.csv')
 
     def get_layout(self):
         """
@@ -34,9 +36,10 @@ class Accueil:
                 ),
                 html.Div(
                     children=[
-                        dcc.Graph(figure=self.SubPiechart.get_piechart())
+                        html.Iframe(srcDoc=self.carte.get_map().get_root().render(), height='600px', width='1000px')
                     ]
-                )
+                ),
+                
             ]
         )
 
