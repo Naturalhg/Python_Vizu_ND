@@ -1,5 +1,5 @@
 from dashboard.pages.dashboard import DashBoard
-import clean_data as cd
+import dashboard.utils.clean_data as cd
 class Main:
     """
     Cette classe représente l'exécutable pour lancer l'application
