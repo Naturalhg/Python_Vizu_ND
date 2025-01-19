@@ -7,9 +7,9 @@ class Tornado:
     Tableau de bord des données sur les tornades
 
     Attributs :
-        GenHistogram = Instance de la classe Histogram qui permet l'affichage de l'histogramme général des tornades les plus mortelles en fonction de leur magnitude
+        GenHistogram = Instance de la classe Histogram qui permet l'affichage de l'histogramme général des tornades les plus dangereuses en fonction de leur magnitude
         CurPiechart = Instance de la classe PieChart qui permet l'affichage du pichart de la fréquence d'apparition des tornades par magnitude
-        YearHistogram = Instance de la classe Histogram qui permet l'affichage de l'histogramme des morts chaque année par magnitude des tornades
+        YearHistogram = Instance de la classe Histogram qui permet l'affichage de l'histogramme des pertes monétaires chaque année par magnitude des tornades
         MagHistogram = Instance de la classe Histogram qui permet l'affichage de l'histogramme de la fréquence de magnitude des tornades par an
     """
     def __init__(self):
@@ -46,7 +46,7 @@ class Tornado:
                         html.Div(
                             className='wrapper-2-part',
                             children=[
-                                html.H3('Nombre de morts en fonction de la magnitude des tornades'),
+                                html.H3('Pertes monétaires en fonction de la magnitude des tornades'),
                                 dcc.Graph(figure=self.GenHistogram.get_histogram()),
                             ]
                         ),
@@ -74,7 +74,7 @@ class Tornado:
                         html.Div(
                             className='wrapper-2-part',
                             children=[
-                                html.H2("Nombre de morts par année en fonction de leur magnitude"),
+                                html.H2("Pertes monétaires par année en fonction de leur magnitude"),
                                 dcc.Graph(figure=self.YearHistogram.get_histogram()),
                             ]
                         ),

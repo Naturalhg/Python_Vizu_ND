@@ -65,7 +65,7 @@ class Accueil:
                 html.Div(
                     className='texts',
                     children=[
-                        html.H1('Détails sur la mortalité')
+                        html.H1('Détails des pertes')
                     ]
                 ),
                 html.Div(
