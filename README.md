@@ -12,6 +12,7 @@ Voici le lien git qui vous permettra de télécharger les fichiers avant les dif
 ```bash
 
 https://github.com/Naturalhg/Python_Vizu_ND/tree/main
+
 ```
 
 Afin de manipuler dans de bonnes conditions l’outil d’analyse plusieurs étapes sont à suivre:
@@ -22,17 +23,17 @@ Tout d’abord, vous devez accéder localement sur votre machine aux différents
 git clone https://github.com/Naturalhg/Python_Vizu_ND.git   
 ```
 
-      Il est important dans un second temps de télécharger les différentes bibliothèques python       utilisées dans le projet.
+Il est important dans un second temps de télécharger les différentes bibliothèques python       utilisées dans le projet.
 
 ```bash
 python -m pip install -r requirements.txt
 ```
-        Enfin vous pouvez simplement exécuter le code grâce à la commande 
+Enfin vous pouvez simplement exécuter le code grâce à la commande 
 
 ```bash
 python main.py
 ```
-     N’oubliez pas qu’afin de visualiser les différents graphiques après exécution du code vous devez vous connecter à votre serveur local hébergeant le projet via votre navigateur, en entrant dans votre barre de recherche l’url.
+N’oubliez pas qu’afin de visualiser les différents graphiques après exécution du code vous devez vous connecter à votre serveur local hébergeant le projet via votre navigateur, en entrant dans votre barre de recherche l’url.
 ```bash
 http://127.0.0.1:8050/
 ```
