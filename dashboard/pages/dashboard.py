@@ -87,7 +87,7 @@ class DashBoard:
         Retourne:
             html.Div() : le layout complet avec les informations et données concernant la page sélectionnée
         """
-        layout = html.Div()
+        layout = html.Div(Accueil().get_layout())
         if 'accueil' == ctx.triggered_id :
             layout = html.Div(Accueil().get_layout())
         elif 'tornado' == ctx.triggered_id :

@@ -24,7 +24,7 @@ class Histogram:
                 filter_color : filtre permettant de différencier avec de la couleur un paramètre supplémentaire
         """
         # Récupération des données en lisant le fichier csv correspondant
-        self.data = pd.read_csv('data/' + filename, delimiter=',')
+        self.data = pd.read_csv('data/cleaned/' + filename, delimiter=',')
 
         # Création de l'histogramme utilisant plotly express avec les données précisées
         self.hist = plt.histogram(self.data, x=x_param, y=y_param, color=filter_color, nbins=20)

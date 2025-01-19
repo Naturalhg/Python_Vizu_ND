@@ -23,7 +23,7 @@ class PieChart:
                 name : Second paramètre du piechart
         """
         # Récupération des données en lisant le fichier csv correspondant
-        self.data = pd.read_csv('data/' + filename, delimiter=',')
+        self.data = pd.read_csv('data/cleaned/' + filename, delimiter=',')
 
         # Création du piechart à l'aide des données en argument
         self.pie = plt.pie(self.data, values=value, names=name, hole=0.3)
