@@ -8,13 +8,18 @@ class Map:
     par localisation, en utilisant les données enrichies avec des coordonnées.
 
     Attributs :
+        df : Données filtrées
         centre_lat (float) : Latitude du centre de la carte.
         centre_lon (float) : Longitude du centre de la carte.
         map_bounds (list) : Coordonnées max de la carte.
         m (folium.Map) : Carte folium pour les visualisations.
+
+    Méthodes :
+        __init__(self, disaster_data_path) : Initialise l'objet Map
+        add_markers(self) : Implémente les cercles sur la carte
+        get_map(self) : Renvoie l'objet graphique
+        genCoords(self, disaster_data_path) : Crée un fichier CSV avec des coordonnées utilisables
     """
-
-
 
     def __init__(self, disaster_data_path):
         """
@@ -83,6 +88,11 @@ class Map:
         return self.m
 
     def genCoords(self, disaster_data_path):
+        """
+        Crée un fichier CSV depuis deux fichiers de coordonées
+
+        :param disaster_data_path: Chemin vers le fichier CSV à créer.
+        """
         # Charger les fichiers
         disasters_file = './data/cleaned/All_Natural_Disasters.csv'
         coordinates_file = './data/cleaned/country-coordinates-world.csv'

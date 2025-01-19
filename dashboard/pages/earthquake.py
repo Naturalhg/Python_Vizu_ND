@@ -1,10 +1,10 @@
-from dash import Dash, html, dcc
-from histogram import Histogram
-from piechart import PieChart
+from dash import html, dcc
+from dashboard.components.histogram import Histogram
+from dashboard.components.piechart import PieChart
 
 class Earthquake:
     """
-    Tableau de bord des données sur les catastrophes naturelles
+    Tableau de bord des données sur les séïsmes
 
     Attributs :
         GenHistogram = Instance de la classe Histogram qui permet l'affichage de l'histogramme général des séïsmes les plus mortels en fonction de l'échelle de Richter
@@ -26,7 +26,7 @@ class Earthquake:
         Changement du layout de l'application
 
         Retourne:
-            Div : Une division html de l'application concernant les séïsmes
+            html.Div : Une division html de l'application concernant les séïsmes
         """
 
         self.layout = html.Div(

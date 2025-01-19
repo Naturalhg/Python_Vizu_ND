@@ -1,17 +1,22 @@
-from dash import Dash, html, dcc
-from piechart import PieChart
-from histogram import Histogram
-from map import Map
+from dash import html, dcc
+from dashboard.components.piechart import PieChart
+from dashboard.components.histogram import Histogram
+from dashboard.components.map import Map
 
 class Accueil:
     """
     Tableau de bord des données sur les catastrophes naturelles
 
     Attributs :
+        GenMap = Instance de la classe Map qui permet l'affichage d'une carte générale sur la fréquence d'apparition des catastrophes naturelles
         CurPiechart = Instance de la classe PieChart qui permet l'affichage d'un pichart général sur les fréquences d'apparition des catastrophes naturelles
         LossPiechart = Instance de la classe PieChart qui permet l'affichage d'un pichart sur les pertes monétaires des catastrophes naturelles
         DeathPiechart = Instance de la classe PieChart qui permet l'affichage d'un pichart sur le nombre de morts par catastrophes naturelles
         DeathHistogram = Instance de la classe Histogram qui permet l'affichage d'un histogramme sur le nombre de morts par an par pays des catastrophes naturelles
+
+    Méthodes :
+        __init__(self) : Initialise l'objet Accueil
+        get_layout(self) : Récupère toutes les données et la mise en page concernant la page d'accueil
     """
     def __init__(self):
         """
@@ -22,14 +27,13 @@ class Accueil:
         self.LossPiechart = PieChart('All_Natural_Disasters.csv', 'Total Damage (USD, original)', 'Disaster Type')
         self.DeathPiechart = PieChart('All_Natural_Disasters.csv', 'Total Deaths', 'Disaster Type')
         self.DeathHistogram = Histogram('All_Natural_Disasters.csv', 'ISO', 'Total Deaths', 'Disaster Type')
-        #faire histo avec détails argent original et estimé
 
     def get_layout(self):
         """
         Changement du layout de l'application
 
         Retourne:
-            Div : Une division html de l'application concernant l'accueil
+            html.Div : Une division html de l'application concernant l'accueil
         """
 
         self.layout = html.Div(
@@ -62,7 +66,7 @@ class Accueil:
                 html.Div(
                     className='texts',
                     children=[
-                        html.H1('Détails sur le temps')
+                        html.H1('Détails sur la mortalité')
                     ]
                 ),
                 html.Div(
