@@ -42,10 +42,10 @@ http://127.0.0.1:8050/
 
 ---
 
-- **All_Natural_Disasters** contient un grand volume de catastrophes naturelles s’étant produit depuis 1900. On y trouve essentiellement les dates lieux et types de catastrophes naturelles. Mais aussi les couts financiers et le nombre de morts provoqués par l’évènement.
+- **All_Natural_Disasters** contient un grand volume de catastrophes naturelles s’étant produit depuis 1900. On y trouve essentiellement les dates lieux et types de catastrophes naturelles. Mais aussi les couts financiers et le nombre de morts provoqués par l’évènement. Lien de la source (Omdena) : https://datasets.omdena.com/dataset/natural-disasters-emergency-events-database---country-profiles
 - **All_Natural_Disasters_with_Coordinates** est une version améliorée de “All natural Disasters” dans laquelle l’on trouve les colonnes essentiels de sa version mère mais aussi les coordonnées géographiques du pays d’origine de la catastrophe.
-- **Earthquakes** contient les différents séismes s’étant produits depuis 1902 avec comme donnée importante la puissance sur l’échelle de Richter associé à l’évènement.
-- **Tornados** contient les différentes tornades s’étant produites depuis 1950 en prenant en compte la puissance et les pertes de chacun d’entre eux.
+- **Earthquakes** contient les différents séismes s’étant produits depuis 1902 avec comme donnée importante la puissance sur l’échelle de Richter associé à l’évènement. Lien de la source (OpenIntro) : https://www.openintro.org/data/index.php?data=earthquakes
+- **Tornados** contient les différentes tornades s’étant produites depuis 1950 en prenant en compte la puissance et les pertes de chacun d’entre eux. Lien de la source (Kaggle) : https://www.kaggle.com/datasets/sujaykapadnis/tornados
 - **Country-coordinates-world** contient pour chaque pays du monde les coordonnées en longitude et latitude correspondantes. Il est utiliser dans le cadre de la concaténation avec “All_Natural_Disasters” pour formés le fichier “All_Natural_Disasters_with_Coordinates”
 
 # Developer Guide
