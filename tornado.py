@@ -1,16 +1,16 @@
-from dash import Dash, html, dcc
+from dash import html, dcc
 from piechart import PieChart
 from histogram import Histogram
 
 class Tornado:
     """
-    Tableau de bord des données sur les catastrophes naturelles
+    Tableau de bord des données sur les tornades
 
     Attributs :
         GenHistogram = Instance de la classe Histogram qui permet l'affichage de l'histogramme général des tornades les plus mortelles en fonction de leur magnétude
         CurPiechart = Instance de la classe PieChart qui permet l'affichage du pichart de la fréquence d'apparition des tornades par magnétude
         YearHistogram = Instance de la classe Histogram qui permet l'affichage de l'histogramme des morts chaque année par magnétude des tornades
-        RicHistogram = Instance de la classe Histogram qui permet l'affichage de l'histogramme de la fréquence de magnétude des tornades par an
+        MagHistogram = Instance de la classe Histogram qui permet l'affichage de l'histogramme de la fréquence de magnétude des tornades par an
     """
     def __init__(self):
         """
@@ -26,7 +26,7 @@ class Tornado:
         Changement du layout de l'application
 
         Retourne:
-            Div : Une division html de l'application concernant les tornades
+            html.Div : Une division html de l'application concernant les tornades
         """
 
         self.layout = html.Div(

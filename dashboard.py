@@ -1,5 +1,4 @@
-from dash import Dash, html, dcc, ctx, callback, Input, Output
-from piechart import PieChart
+from dash import Dash, html, ctx, callback, Input, Output
 from accueil import Accueil
 from tornado import Tornado
 from earthquake import Earthquake
@@ -7,13 +6,18 @@ from earthquake import Earthquake
 class DashBoard:
     """
     Tableau de bord des données sur les catastrophes naturelles
+
+    Méthodes :
+        __init__(self) : Initialise l'objet DashBoard
+        createDash(self) : Gère la mise en page concernant la page d'accueil
+        switch_page(btn1, btn2, btn3) : Permet de changer de page en changeant le layout du contenu
     """
     def __init__(self):
         """
-        Initialisation du Dashboard en implémentant la navbar et l'accueil
+        Initialisation du Dashboard
         """
 
-    def createDashApplication(self):
+    def createDash(self):
         """
         Création de l'application pour afficher les données concernant les catastrophes naturelles
 
@@ -39,24 +43,15 @@ class DashBoard:
                                     'Tornades',
                                     id='tornado',
                                 ),
-                            ]
-                        ),
-                        html.Img(
-                            src=self.app.get_asset_url('logo_black.png'),
-                            className='logo-navbar',
-                        ),
-                        html.Div(
-                            className='right',
-                            children=[
                                 html.Button(
                                     'Séïsmes',
                                     id='earthquake',
                                 ),
-                                html.Button(
-                                    'Sécheresses',
-                                    id='earthquakes',
-                                ),
                             ]
+                        ),
+                        html.Img(
+                            src=self.app.get_asset_url('logo_black.png'),
+                            className='logo-navbar right',
                         ),
                     ]
                 ),
@@ -64,27 +59,39 @@ class DashBoard:
             ]
         )
 
-        # fichier CSS
+        # Ajout du fichier CSS
         self.app.css.append_css({'external_url': '/assets/style.css'})
 
         return self.app
 
     @callback(
+        # ID da la Div dans laquelle afficher le contenu
         Output('app_output', 'children'),
+        # IDS des boutons pour les différentes page
         Input('accueil', 'n_clicks'),
         Input('tornado', 'n_clicks'),
         Input('earthquake', 'n_clicks'),
-        Input('earthquakes', 'n_clicks'),
     )
 
-    def switch_page(btn1, btn2, btn3, btn4) :
+    def switch_page(btn1, btn2, btn3) :
+        """
+        Change la page de l'application
+
+        Attributs :
+            layout = Page à charger sur l'application
+
+        param: btn1 : id de la page d'accueil
+                btn2 : id de la page des tornades
+                btn3 : id de la page des séïsmes
+
+        Retourne:
+            html.Div() : le layout complet avec les informations et données concernant la page sélectionnée
+        """
         layout = html.Div()
         if 'accueil' == ctx.triggered_id :
             layout = html.Div(Accueil().get_layout())
         elif 'tornado' == ctx.triggered_id :
             layout = html.Div(Tornado().get_layout())
         elif 'earthquake' == ctx.triggered_id :
-            layout = html.Div(Earthquake().get_layout())
-        elif 'earthquakes' == ctx.triggered_id :
             layout = html.Div(Earthquake().get_layout())
         return layout
