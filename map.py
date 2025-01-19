@@ -22,9 +22,9 @@ class Map:
 
         :param disaster_data_path: Chemin vers le fichier CSV contenant les données enrichies.
         """
-        self.genCoords('data/' + disaster_data_path)
+        self.genCoords('data/cleaned/' + disaster_data_path)
 
-        self.df = pd.read_csv('data/' + disaster_data_path)
+        self.df = pd.read_csv('data/cleaned/' + disaster_data_path)
         self.df = self.df.dropna(subset=['latitude', 'longitude'])
 
         # Calculer le nombre de catastrophes par pays
@@ -64,8 +64,7 @@ class Map:
 
             # Texte info-bulle
             tooltip_text = f"{disaster_type} - {row['Country']}\n" \
-                           f"Nombre total de catastrophes: {row['Disaster Count']}\n" \
-                           f"Date: {row['Date']}" if 'Date' in row else ''
+                           f"Nombre total de catastrophes: {row['Disaster Count']}"
 
             fl.CircleMarker(
                 location=[row['latitude'], row['longitude']],
@@ -85,8 +84,8 @@ class Map:
 
     def genCoords(self, disaster_data_path):
         # Charger les fichiers
-        disasters_file = './data/All_Natural_Disasters.csv'
-        coordinates_file = './data/country-coordinates-world.csv'
+        disasters_file = './data/cleaned/All_Natural_Disasters.csv'
+        coordinates_file = './data/cleaned/country-coordinates-world.csv'
 
         # Lire les données en DataFrames
         disasters_df = pd.read_csv(disasters_file)
@@ -99,4 +98,4 @@ class Map:
 
         # Sauvegarder dans un nouveau fichier
         merged_df.to_csv(disaster_data_path, index=False)
-
+        print(disaster_data_path+ " CAAAA")

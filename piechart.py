@@ -17,7 +17,7 @@ class PieChart:
         get_piechart(self) : Renvoie l'objet graphique
     """
     def __init__(self, filename, value, name):
-        self.df = pd.read_csv('data/' + filename, delimiter=',')
+        self.df = pd.read_csv('data/cleaned/' + filename, delimiter=',')
         self.fig = plt.pie(self.df, values=value, names=name, hole=0.3)
         self.fig.update_layout(
             margin=dict(l=5, r=5, t=5, b=30),

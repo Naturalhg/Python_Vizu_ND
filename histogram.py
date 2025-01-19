@@ -18,7 +18,7 @@ class Histogram:
         get_piechart(self) : Renvoie l'objet graphique
     """
     def __init__(self, filename, x_param, y_param, filter_color):
-        self.df = pd.read_csv('data/' + filename, delimiter=',')
+        self.df = pd.read_csv('data/cleaned/' + filename, delimiter=',')
 
         #self.filtered_data = self.data[self.data['Valeur de la variable'] != 0]
         #self.grouped_data = self.filtered_data.groupby((self.filtered_data['Valeur de la variable'] // 10) * 10)["Parité d'apparition des catastrophes"].sum().reset_index()
