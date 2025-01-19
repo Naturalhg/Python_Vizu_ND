@@ -60,10 +60,10 @@ class Map:
             # Couleur du cercle selon le type de catastrophe
             disaster_type = row['Disaster Type'] if 'Disaster Type' in row else 'Unknown'
             color = {
-                'Earthquake': 'red',
-                'Flood': 'blue',
-                'Storm': 'green',
-                'Wildfire': 'orange',
+                'Earthquake': 'green',
+                'Flood': 'purple',
+                'Storm': 'orange',
+                'Wildfire': 'pink',
                 'Unknown': 'gray'
             }.get(disaster_type, 'gray')
 
